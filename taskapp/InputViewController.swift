@@ -19,7 +19,7 @@ class InputViewController: UIViewController {
     
     // カテゴリーに初期値を設置
     var categoryList = ["", "未分類", "仕事", "プライベート"]
-    var pickerView = UIPickerView()
+    //var pickerView = UIPickerView()
     
     let realm = try! Realm()    // 追加する
     var task: Task!   // 追加する
@@ -34,10 +34,10 @@ class InputViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
 
         categoryTextField.text = task.category
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        //pickerView.delegate = self
+        //pickerView.dataSource = self
         
-        categoryTextField.inputView = pickerView
+        //categoryTextField.inputView = pickerView
         
         titleTextField.text = task.title
         contentsTextView.text = task.contents
@@ -120,6 +120,7 @@ class InputViewController: UIViewController {
 }
 
 // カテゴリーをピッカー選択する
+/*
 extension InputViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -148,3 +149,4 @@ extension InputViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         }*/
     }
 }
+*/
