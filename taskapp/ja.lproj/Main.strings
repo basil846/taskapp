@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "0gN-xI-PGk"; */
+"0gN-xI-PGk.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "カテゴリー"; ObjectID = "1kd-ft-MfI"; */
+"1kd-ft-MfI.text" = "カテゴリー";
+
+/* Class = "UILabel"; text = "内容"; ObjectID = "75b-6e-wXw"; */
+"75b-6e-wXw.text" = "内容";
+
+/* Class = "UISearchBar"; 8iS-HW-FOd.scopeButtonTitles[0] = "Title"; ObjectID = "8iS-HW-FOd"; */
+"8iS-HW-FOd.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; 8iS-HW-FOd.scopeButtonTitles[1] = "Title"; ObjectID = "8iS-HW-FOd"; */
+"8iS-HW-FOd.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UILabel"; text = "タイトル"; ObjectID = "A7U-ZY-xjY"; */
+"A7U-ZY-xjY.text" = "タイトル";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "BKv-yl-5we"; */
+"BKv-yl-5we.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "UMo-YV-Yya"; */
+"UMo-YV-Yya.text" = "Title";

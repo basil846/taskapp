@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D61BD9DB8EDC2F9E5AAEED8D /* Pods_taskapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9797439A768645B7927BAC4 /* Pods_taskapp.framework */; };
+		FD2433E0261700D000E6E8E3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2433DF261700D000E6E8E3 /* Category.swift */; };
+		FDB830F126131628003CECE3 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB830F026131628003CECE3 /* CategoryViewController.swift */; };
+		FDBF39AE260B1DEB0036012D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBF39AD260B1DEB0036012D /* Task.swift */; };
 		FDC061BF260B170F00816D6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC061BE260B170F00816D6C /* AppDelegate.swift */; };
 		FDC061C1260B170F00816D6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC061C0260B170F00816D6C /* SceneDelegate.swift */; };
 		FDC061C3260B170F00816D6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC061C2260B170F00816D6C /* ViewController.swift */; };
@@ -21,6 +24,10 @@
 		0CD9C7EF4CA89EB883416010 /* Pods-taskapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taskapp.release.xcconfig"; path = "Target Support Files/Pods-taskapp/Pods-taskapp.release.xcconfig"; sourceTree = "<group>"; };
 		76BFF848FBA1563E662158FC /* Pods-taskapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taskapp.debug.xcconfig"; path = "Target Support Files/Pods-taskapp/Pods-taskapp.debug.xcconfig"; sourceTree = "<group>"; };
 		D9797439A768645B7927BAC4 /* Pods_taskapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taskapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD2433DF261700D000E6E8E3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FDB830EE260F340A003CECE3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		FDB830F026131628003CECE3 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		FDBF39AD260B1DEB0036012D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		FDC061BB260B170F00816D6C /* taskapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC061BE260B170F00816D6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDC061C0260B170F00816D6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +57,6 @@
 				76BFF848FBA1563E662158FC /* Pods-taskapp.debug.xcconfig */,
 				0CD9C7EF4CA89EB883416010 /* Pods-taskapp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,10 +93,13 @@
 				FDC061C0260B170F00816D6C /* SceneDelegate.swift */,
 				FDC061C2260B170F00816D6C /* ViewController.swift */,
 				FDC061D4260B189D00816D6C /* InputViewController.swift */,
+				FDB830F026131628003CECE3 /* CategoryViewController.swift */,
 				FDC061C4260B170F00816D6C /* Main.storyboard */,
 				FDC061C7260B171000816D6C /* Assets.xcassets */,
 				FDC061C9260B171000816D6C /* LaunchScreen.storyboard */,
 				FDC061CC260B171000816D6C /* Info.plist */,
+				FDBF39AD260B1DEB0036012D /* Task.swift */,
+				FD2433DF261700D000E6E8E3 /* Category.swift */,
 			);
 			path = taskapp;
 			sourceTree = "<group>";
@@ -138,6 +147,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = FDC061B2260B170F00816D6C;
 			productRefGroup = FDC061BC260B170F00816D6C /* Products */;
@@ -211,8 +221,11 @@
 			files = (
 				FDC061C3260B170F00816D6C /* ViewController.swift in Sources */,
 				FDC061BF260B170F00816D6C /* AppDelegate.swift in Sources */,
+				FDBF39AE260B1DEB0036012D /* Task.swift in Sources */,
 				FDC061C1260B170F00816D6C /* SceneDelegate.swift in Sources */,
+				FDB830F126131628003CECE3 /* CategoryViewController.swift in Sources */,
 				FDC061D5260B189D00816D6C /* InputViewController.swift in Sources */,
+				FD2433E0261700D000E6E8E3 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +236,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FDC061C5260B170F00816D6C /* Base */,
+				FDB830EE260F340A003CECE3 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -242,6 +256,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -303,6 +318,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
