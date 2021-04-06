@@ -124,7 +124,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // 検索ボタン押下時の処理
-    /*func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
         
         guard let searchText = searchBar.text else {return}
@@ -141,10 +141,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else {
             // 検索結果がある場合
             taskArray = result
+            tableView.reloadData()
         }
-        
-        tableView.reloadData()
-    }*/
+    }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchBar.endEditing(true)

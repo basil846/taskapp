@@ -19,9 +19,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ITV-Ol-Cak">
                                 <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="718" id="Q02-3O-3gL"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="UMo-YV-Yya" detailTextLabel="0gN-xI-PGk" style="IBUITableViewCellStyleSubtitle" id="fgF-4B-EkO">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
@@ -62,12 +59,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ITV-Ol-Cak" firstAttribute="top" secondItem="8iS-HW-FOd" secondAttribute="bottom" id="I6B-N6-hRV"/>
-                            <constraint firstItem="ITV-Ol-Cak" firstAttribute="leading" secondItem="8iS-HW-FOd" secondAttribute="leading" id="VFB-JY-acc"/>
-                            <constraint firstItem="ITV-Ol-Cak" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jXJ-Tu-yoz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ITV-Ol-Cak" secondAttribute="trailing" id="nNC-yg-6rQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ITV-Ol-Cak" secondAttribute="bottom" id="rEO-6r-C9R"/>
-                            <constraint firstItem="ITV-Ol-Cak" firstAttribute="trailing" secondItem="8iS-HW-FOd" secondAttribute="trailing" id="rqR-lI-WF0"/>
+                            <constraint firstItem="8iS-HW-FOd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8tq-RS-Y9X"/>
+                            <constraint firstItem="ITV-Ol-Cak" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HW0-pQ-fDN"/>
+                            <constraint firstItem="8iS-HW-FOd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bRg-db-agS"/>
+                            <constraint firstItem="ITV-Ol-Cak" firstAttribute="top" secondItem="8iS-HW-FOd" secondAttribute="bottom" id="x43-nU-l0D"/>
+                            <constraint firstItem="8iS-HW-FOd" firstAttribute="trailing" secondItem="ITV-Ol-Cak" secondAttribute="trailing" id="x4d-tT-Lbs"/>
+                            <constraint firstItem="8iS-HW-FOd" firstAttribute="leading" secondItem="ITV-Ol-Cak" secondAttribute="leading" id="xzD-aZ-1kC"/>
+                            <constraint firstItem="8iS-HW-FOd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yQa-5a-U1s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vfK-Ny-UUr">
