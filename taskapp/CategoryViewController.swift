@@ -1,48 +1,48 @@
-//
-//  CategoryViewController.swift
-//  taskapp
-//
-//  Created by 森本記庸 on 2021/03/30.
-//
 
 import UIKit
 import RealmSwift
 
 class CategoryViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var addCategory: UITextField!
-    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var displayLabel: UILabel!
+    @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var addCategory: UIButton!
+    @IBOutlet weak var resetCategory: UIButton!
     
     let realm = try! Realm()
     var catego: Category!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-
-        self.navigationItem.hidesBackButton = true
+        
+        self.displayLabel.text = ""
+        
+        categoryTextField.delegate = self
     }
     
-    @IBAction func addButton(_ sender: UIButton) {
-        let obj = Category()
-        obj.category = addCategory.text!
-               
+    @IBAction func addButton(_ sender: Any) {
+        let textField: String? = categoryTextField.text
+        let name = Category()
+        name.categoryName = textField.self!
+
         try! realm.write {
-            realm.add(obj)
-            print("保存完了")
+            realm.add(name)
         }
+        displayLabel.text = "追加しました"
+        displayLabel.textAlignment = NSTextAlignment.center
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func resetButton(_ sender: Any) {
+        _ = Category()
+        let resetName = realm.objects(Category.self)
+        for _ in 1...resetName.count {
+            var i = 0
+            try! realm.write {
+                realm.delete(resetName[i])
+            }
+            i += 1
+        }
+        displayLabel.text = "リセットしました"
+        displayLabel.textAlignment = NSTextAlignment.center
     }
-    */
-
 }

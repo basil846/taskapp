@@ -1,50 +1,58 @@
-//
-//  InputViewController.swift
-//  taskapp
-//
-//  Created by 森本記庸 on 2021/03/24.
-//
 
 import UIKit
-import RealmSwift    // 追加する
-import UserNotifications    // 追加
+import RealmSwift
+import UserNotifications
 
 class InputViewController: UIViewController {
 
-    @IBOutlet weak var categoryInputButton: UIButton!
+
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    // カテゴリーに初期値を設置
-    var categoryList = ["", "未分類", "仕事", "プライベート"]
-    var pickerView = UIPickerView()
+    let realm = try! Realm()
+    var task: Task!
     
-    let realm = try! Realm()    // 追加する
-    var task: Task!   // 追加する
+    // カテゴリーに初期値を設置
+    var strList = ["", "未分類"]
+    var pickerView = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
         // 背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGesture)
-
+        
+        //--
+        if (UserDefaults.standard.array(forKey: "listPass") != nil) {
+            strList = UserDefaults.standard.array(forKey: "listPass") as! [String]
+        }
+        //---
         categoryTextField.text = task.category
         pickerView.delegate = self
         pickerView.dataSource = self
         
         categoryTextField.inputView = pickerView
-        
+
         titleTextField.text = task.title
         contentsTextView.text = task.contents
         datePicker.date = task.date
+        
     }
+    //-------------------------------------
+    override func viewDidAppear(_ animated: Bool) {
+        // ----
+        strList = ["", "未分類"]
+        let getCategory = realm.objects(Category.self)
+        for category in getCategory {
+            strList.append(category.categoryName)
+        }
+        pickerView.reloadAllComponents()
+    }
+    //-------------------------------------
     
-    // 追加する
     override func viewWillDisappear(_ animated: Bool) {
         try! realm.write {
             self.task.category = self.categoryTextField.text!
@@ -54,12 +62,12 @@ class InputViewController: UIViewController {
             self.realm.add(self.task, update: .modified)
         }
         
-        setNotification(task: task)   // 追加
+        setNotification(task: task)
 
         super.viewWillDisappear(animated)
     }
     
-    // タスクのローカル通知を登録する --- ここから ---
+    // タスクのローカル通知を登録する
     func setNotification(task: Task) {
         let content = UNMutableNotificationContent()
         // タイトルと内容を設定(中身がない場合メッセージ無しで音だけの通知になるので「(xxなし)」を表示する)
@@ -97,26 +105,12 @@ class InputViewController: UIViewController {
                 print("---------------/")
             }
         }
-    } // --- ここまで追加 ---
+    }
     
     @objc func dismissKeyboard(){
         // キーボードを閉じる
         view.endEditing(true)
     }
-    
-    @IBAction func unwind(_ segue: UIStoryboardSegue) {
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 // カテゴリーをピッカー選択する
@@ -128,25 +122,16 @@ extension InputViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categoryList.count
+        return strList.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return categoryList[row]
+        return strList[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoryTextField.text = categoryList[row]
+        categoryTextField.text = strList[row]
         categoryTextField.resignFirstResponder()
-        /*// realmから値を取得
-        let obj = realm.objects(Category.self)
-        for objData in obj {
-            // ピッカーに追加
-            categoryList.append(objData.category)
-            pickerView.reloadAllComponents()
-            objData.category = ""
-            return true
-        }*/
     }
 }
 
